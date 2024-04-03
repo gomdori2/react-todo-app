@@ -1,10 +1,14 @@
-import Test from "./components/Test";
 import TodoTemplate from "./components/TodoTemplate";
+import TodoInsert from "./components/TodoInsert";
+import TodoListItem from "./components/TodoListItem";
+import TodoList from "./components/TodoList";
 
-// asdf
-const App = () => {
+function App() {
   return (
-    <TodoTemplate></TodoTemplate>
+    <TodoTemplate>
+      <TodoInsert />
+      <TodoList />
+    </TodoTemplate>
   );
 }
 
