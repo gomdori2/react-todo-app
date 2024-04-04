@@ -11,17 +11,33 @@ import classNames from "classnames";
 import { useState } from "react";
 
 // import {}
-const TodoListItem = () => {
-  // 임시 상태관리 코드 삭제요망
-  const [checked, setChecked] = useState(true);
+const TodoListItem = ({ todo, onRemove, onToggle }) => {
+  const { id, text, checked } = todo;
+  // 태그에 아이디 줘도 불러들이질 못함.
+  // let a = document.getElementById("ab");
+  // a.addEventListener("click", function (checked) {
+  //   checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />;
+  // });
+
+  // const a = () => {
+  // 뭔지 안알려줬음
+  //   console.log(todo.checked);
+  //   // todo.checked == "false" ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />;
+  //   return todo.checked;
+  // };
+
   return (
     <div className="TodoListItem">
-      <div className={classNames("checkbox", { checked })}>
+      {/* onClick={a} */}
+      <div
+        className={classNames("checkbox", { checked })}
+        onClick={() => onToggle(id)}
+      >
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
 
-        <div className="text">리액트 공부하기</div>
+        <div className="text">{text}</div>
       </div>
-      <div className="remove">
+      <div className="remove" onClick={() => onRemove(id)}>
         <MdOutlineRemoveCircleOutline />
       </div>
     </div>

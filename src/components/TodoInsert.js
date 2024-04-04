@@ -2,7 +2,7 @@ import { MdAdd } from "react-icons/md";
 import { useState } from "react";
 import React from "react";
 import "../styles/TodoInsert.scss";
-const TodoInsert = () => {
+const TodoInsert = ({ onInsert }) => {
   const [value, setValue] = useState("");
 
   const onChange = event => {
@@ -11,6 +11,8 @@ const TodoInsert = () => {
   };
 
   const onSubmit = event => {
+    onInsert(value);
+
     // 새로고침 방지
     event.preventDefault();
     // 값 초기화
