@@ -1,5 +1,13 @@
 # 할 일 앱만들기
 
+## git clone 연습
+
+- git clone https://github.com/gomdori2/react-todo-app.git ./
+
+- yarn install
+
+- yarn start
+
 ## 리액트 프로젝트 세팅
 
 - ./ 상위폴더
